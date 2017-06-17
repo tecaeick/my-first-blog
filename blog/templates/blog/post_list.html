@@ -15,16 +15,13 @@
     </div>
 
     <div>
-        <h2>1</h2>
-        <img src="https://scontent-gru2-2.xx.fbcdn.net/v/t1.0-9/18301954_1807918149536527_5852143849400512014_n.jpg?oh=14f8101d607f6a90ea8eeb143372a053&oe=59D967E7" alt="três potes de lemon curd de limão siciliano" width="500">
-       <p>O <strong>Lemon Curd</strong> é um creme de limão muito popular na Inglaterra.
-        Ele é aveludado e pode ser usado em bolos, tortas, macaroons, biscoitos e em tudo mais que você quiser.</p>
-     </div>
-
+        {% for post in posts %}
     <div>
-        <h2>2</h2>
-        <img src="https://scontent-gru2-2.xx.fbcdn.net/v/t1.0-9/18446949_1810347842626891_3371403372127093454_n.jpg?oh=4da9b7be1a5e5b5f0842c98a1cc5db15&oe=599BC32D" alt="cupcake de red velvet com cobertura de chantininho" width="500">
-        <p>O <strong>Red Velvet</strong> é um bolo super famoso nos EUA. Ele combina os sabores do chocolate, da baunilha e do buttermilk, além de ter uma cor maravilhosa!
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+        {% endfor %}
    </div>
 
     <div>
