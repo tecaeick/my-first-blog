@@ -1,31 +1,41 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>Café Eickmann</title>
-</head>
+{% load staticfiles %}
+<html>
+    <head>
+        <title>Café Eickmann</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    </head>
 <body>
 
-    <div>
-        <h1>Café Eickmann</h1>
+    <div class="page-header">
+        <h1><a href="/">Café Eickmann</a></h1>
+
+        <h3><a>Bolos e Cupcakes</a></h3>
     </div>
 
-    <div>
-        <h3>Bolos e Cupcakes</h3>
+    <div class="post">
+    <div class="content container">
+        <div class="row">
+            <div class="col-md-8">
+                {% for post in posts %}
+                    <div class="post">
+                        <div class="date">
+                            {{ post.published_date }}
+                        </div>
+                        <h4><a href="">{{ post.title }}</a></h4>
+                        <p>{{ post.text|linebreaksbr }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
     </div>
-
-    <div>
-        {% for post in posts %}
-    <div>
-        <p>published: {{ post.published_date }}</p>
-        <h1><a href="">{{ post.title }}</a></h1>
-        <p>{{ post.text|linebreaksbr }}</p>
-    </div>
-        {% endfor %}
    </div>
 
     <div>
-        <h3>Sabores</h3>
+        <h3 id="titulo-de-lista">Sabores</h3>
         <ul>
             <li>Baunilha com Lemon Curd</li>
             <li>Red Velvet com Chantininho</li>
