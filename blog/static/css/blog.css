@@ -16,10 +16,10 @@ h4 a {
     }
 
 .page-header {
-    color: #C7C7C7;
+    background-color: #FFFFFF;
     margin-top: 0;
     padding: 20px 20px 20px 40px;
-    }
+}
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
     color: #A4221B;
